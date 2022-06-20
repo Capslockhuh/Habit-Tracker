@@ -14,5 +14,5 @@ struct Habit: Identifiable {
 }
 
 class HabitsClass: ObservableObject {
-    @Published var habits: [Habit] = []
+    @Published var habits = [Habit]()
 }

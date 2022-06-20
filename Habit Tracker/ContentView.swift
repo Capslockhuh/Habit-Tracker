@@ -10,9 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            
+            List {
+                ForEach(HabitsClass.habits) { habit in
+                    Text(habit.name)
+                }
+            }
         }
-        .navigationTitle("Habit Tracker")
     }
 }
 

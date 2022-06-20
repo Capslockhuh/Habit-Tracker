@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Activity: Identifiable {
-    var id: String
+struct Habit: Identifiable {
+    var id = UUID()
     var name: String
     var description: String
 }
 
-class ActivitiesClass: ObservableObject {
-    @Published var activities: [Activity] = []
+class HabitsClass: ObservableObject {
+    @Published var habits: [Habit] = []
 }

@@ -11,6 +11,7 @@
 		6EED61602860A7AB003CFDBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED615F2860A7AB003CFDBC /* ContentView.swift */; };
 		6EED61622860A7AC003CFDBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EED61612860A7AC003CFDBC /* Assets.xcassets */; };
 		6EED61652860A7AC003CFDBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EED61642860A7AC003CFDBC /* Preview Assets.xcassets */; };
+		6EED616C2860A826003CFDBC /* ActivityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED616B2860A826003CFDBC /* ActivityData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6EED615F2860A7AB003CFDBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6EED61612860A7AC003CFDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EED61642860A7AC003CFDBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6EED616B2860A826003CFDBC /* ActivityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				6EED615D2860A7AB003CFDBC /* Habit_TrackerApp.swift */,
 				6EED615F2860A7AB003CFDBC /* ContentView.swift */,
+				6EED616B2860A826003CFDBC /* ActivityData.swift */,
 				6EED61612860A7AC003CFDBC /* Assets.xcassets */,
 				6EED61632860A7AC003CFDBC /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EED616C2860A826003CFDBC /* ActivityData.swift in Sources */,
 				6EED61602860A7AB003CFDBC /* ContentView.swift in Sources */,
 				6EED615E2860A7AB003CFDBC /* Habit_TrackerApp.swift in Sources */,
 			);

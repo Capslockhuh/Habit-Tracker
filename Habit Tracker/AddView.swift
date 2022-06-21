@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct AddView: View {
+    @StateObject var currentHabits = HabitsClass()
+    
     @State private var name = ""
     @State private var description = ""
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationView {
             Form {
@@ -21,7 +26,8 @@ struct AddView: View {
             .toolbar {
                 Button("Save") {
                     let newHabit = Habit(name: name, description: description)
-                    //TODO: append to a habits array
+                    currentHabits.habits.append(newHabit)
+                    dismiss()
                 }
             }
         }

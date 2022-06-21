@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var currentHabits = HabitsClass()
+    @StateObject var currentHabits = HabitsClass()
     
     func removeItems(at offsets: IndexSet) {
         currentHabits.habits.remove(atOffsets: offsets)
     }
+    
+    @State private var addViewIsPresented = false
     
     var body: some View {
         NavigationView {
@@ -27,15 +29,20 @@ struct ContentView: View {
             .toolbar {
                 // for testing only - remove later
                 Button {
-                    let testHabit = Habit(name: "test", description: "test")
-                    currentHabits.habits.append(testHabit)
+                    //let testHabit = Habit(name: "test", description: "test")
+                    //currentHabits.habits.append(testHabit)
+                    addViewIsPresented = true
                 } label: {
                     Image(systemName: "plus")
                 }
             }
+            .sheet(isPresented: $addViewIsPresented) {
+                AddView(currentHabits: currentHabits)
+            }
         }
     }
 }
+// TODO: fix "Argument passed to call that takes no arguments"
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

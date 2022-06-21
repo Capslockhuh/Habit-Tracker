@@ -7,12 +7,29 @@
 
 import Foundation
 
-struct Habit: Identifiable {
+struct Habit: Identifiable, Codable {
     var id = UUID()
-    var name: String
-    var description: String
+    let name: String
+    let description: String
+    let createdDate: String
 }
 
 class HabitsClass: ObservableObject {
-    @Published var habits = [Habit]()
+    @Published var habits = [Habit]() {
+        didSet {
+            if let encoded = try? JSONEncoder().encode(habits) {
+                UserDefaults.standard.set(encoded, forKey: "Habits")
+            }
+        }
+    }
+    init() {
+        if let savedHabits = UserDefaults.standard.data(forKey: "Habits") {
+            if let decodedHabits = try? JSONDecoder().decode([Habit].self, from: savedHabits) {
+                habits = decodedHabits
+                return
+            }
+        }
+
+        habits = []
+    }
 }

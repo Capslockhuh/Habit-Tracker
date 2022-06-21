@@ -25,7 +25,9 @@ struct AddView: View {
             .navigationTitle("Add a new habit")
             .toolbar {
                 Button("Save") {
-                    let newHabit = Habit(name: name, description: description)
+                    let unformattedCreatedDate = Date.now
+                    let formattedCratedDate = unformattedCreatedDate.formatted()
+                    let newHabit = Habit(name: name, description: description, createdDate: formattedCratedDate)
                     currentHabits.habits.append(newHabit)
                     dismiss()
                 }

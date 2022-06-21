@@ -21,16 +21,18 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(currentHabits.habits, id: \.id) { habit in
-                    Text(habit.name)
+                    NavigationLink {
+                        DetailView(currentHabits: currentHabits, name: habit.name, description: habit.description, createdDate: habit.createdDate)
+                    } label: {
+                        Text(habit.name)
+                        Text(habit.createdDate)
+                    }
                 }
                 .onDelete(perform: removeItems)
             }
             .navigationTitle("Habit tracker")
             .toolbar {
-                // for testing only - remove later
                 Button {
-                    //let testHabit = Habit(name: "test", description: "test")
-                    //currentHabits.habits.append(testHabit)
                     addViewIsPresented = true
                 } label: {
                     Image(systemName: "plus")
@@ -42,7 +44,6 @@ struct ContentView: View {
         }
     }
 }
-// TODO: fix "Argument passed to call that takes no arguments"
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

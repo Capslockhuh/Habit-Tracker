@@ -17,21 +17,25 @@ struct DetailView: View {
         NavigationView {
             VStack {
                 HStack {
+                    Image(systemName: "character.cursor.ibeam")
                     Text("Name:")
                         .font(.headline)
                     Text(name)
                 }
                 HStack {
+                    Image(systemName: "doc.plaintext.fill")
                     Text("Description:")
                         .font(.headline)
                     Text(description)
                 }
                 HStack {
+                    Image(systemName: "calendar")
                     Text("Created:")
                         .font(.headline)
                     Text(createdDate)
                 }
             }
+            padding()
             .navigationTitle("Habit Details")
         }
     }

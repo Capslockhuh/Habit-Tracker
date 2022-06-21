@@ -25,7 +25,6 @@ struct ContentView: View {
                         DetailView(currentHabits: currentHabits, name: habit.name, description: habit.description, createdDate: habit.createdDate)
                     } label: {
                         Text(habit.name)
-                        Text(habit.createdDate)
                     }
                 }
                 .onDelete(perform: removeItems)
